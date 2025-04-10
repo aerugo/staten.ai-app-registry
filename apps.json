@@ -16,12 +16,7 @@
     "config": {
       "mcpKey": "Kolada",
       "runtime": "uv",
-      "args": [
-        "--directory",
-        "[sökväg till kolada-mcp]/src",
-        "run",
-        "server.py"
-      ]
+      "args": ["kolada-mcp"]
     },
     "features": [
       {
