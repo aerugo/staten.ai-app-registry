@@ -6,8 +6,8 @@
     "icon": {
       "type": "url",
       "url": {
-        "light": "https://raw.githubusercontent.com/fleuristes/app-registry/refs/heads/main/assets/kolada-light.png",
-        "dark": "https://raw.githubusercontent.com/fleuristes/app-registry/refs/heads/main/assets/kolada-dark.png"
+        "light": "https://raw.githubusercontent.com/aerugo/staten.ai/refs/heads/main/assets/kolada-light.png",
+        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai/refs/heads/main/assets/kolada-dark.png"
       }
     },
     "category": "Statistik",
