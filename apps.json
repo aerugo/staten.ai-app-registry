@@ -6,8 +6,8 @@
     "icon": {
       "type": "url",
       "url": {
-        "light": "https://github.com/aerugo/staten.ai-app-registry/blob/132c1b20b0a116cfc10296b55bd79c127ff6a02c/assets/kolada-dark.png",
-        "dark": "https://github.com/aerugo/staten.ai-app-registry/blob/132c1b20b0a116cfc10296b55bd79c127ff6a02c/assets/kolada-dark.png"
+        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png",
+        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png"
       }
     },
     "category": "Statistik",
