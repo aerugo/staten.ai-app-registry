@@ -15,7 +15,7 @@
     "developer": "Hugi Aegisberg",
     "config": {
       "mcpKey": "Kolada",
-      "runtime": "uv",
+      "runtime": "uvx",
       "args": ["kolada-mcp"]
     },
     "features": [
