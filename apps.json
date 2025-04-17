@@ -1,12 +1,12 @@
 [
   {
     "name": "KoladaMCP",
-    "description": "Utforska och analysera data om Sveriges kommuner och regioner direkt från Kolada-databasen. Hitta enkelt statistik, se utveckling över tid och jämför olika områden med vanliga frågor.",
+    "description": "Utforska och analysera data om Sveriges kommuner och regioner direkt från Kolada-databasen. Hitta enkelt statistik, se utveckling över tid och jämför olika områden med vanliga frågor. Inofficiell och inte utvecklad av RKA.",
     "sourceUrl": "https://github.com/aerugo/kolada-mcp",
     "icon": {
       "type": "url",
       "url": {
-        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png",
+        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-light.png",
         "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png"
       }
     },
@@ -38,6 +38,49 @@
         "name": "Undersök samband mellan olika siffror",
         "description": "Se om det finns samband mellan olika typer av statistik, till exempel om högre skatter verkar hänga ihop med nöjdare invånare.",
         "prompt": "Finns det ett samband mellan kommunalskatt och invånarnas nöjdhet med kommunens service?"
+      }
+    ],
+    "setup": []
+  },
+  {
+    "name": "SwemoMCP",
+    "description": "Hämta Riksbankens prognoser och utfall som ligger till grund för penningpolitiken. Sök serier som BNP‑tillväxt, arbetslöshet, inflationsmått och styrränta och jämför olika policy‑rundor. Inofficiell och inte utvecklad av Riksbanken.",
+    "sourceUrl": "https://github.com/aerugo/swemo-mcp",
+    "icon": {
+      "type": "url",
+      "url": {
+        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/swemo-dark.png",
+        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/swemo-dark.png"
+      }
+    },
+    "category": "Makroekonomi",
+    "price": "Free",
+    "developer": "Hugi Aegisberg",
+    "config": {
+      "mcpKey": "Swemo",
+      "runtime": "uvx",
+      "args": ["swemo-mcp"]
+    },
+    "features": [
+      {
+        "name": "Hämta prognoser och utfall",
+        "description": "Sök efter specifika makroserier som BNP‑tillväxt eller KPIF och få både historiska utfall och senaste prognoser.",
+        "prompt": "Visa KPIF‑prognosen i publiceringsrunda 2024:3."
+      },
+      {
+        "name": "Jämför policy‑rundor",
+        "description": "Se hur Riksbankens prognoser har förändrats mellan olika räntebeslutsomgångar.",
+        "prompt": "Hur har prognosen för arbetslösheten förändrats mellan 2023:4 och 2024:2?"
+      },
+      {
+        "name": "Analysera prognosfel",
+        "description": "Kombinera prognoser med realiserade utfall för att utvärdera prognosernas träffsäkerhet.",
+        "prompt": "Beräkna prognosfelet för BNP‑tillväxten 2022 mellan prognosen i 2021:4 och det faktiska utfallet."
+      },
+      {
+        "name": "Utforska katalogen av serier",
+        "description": "Lista alla tillgängliga tidsserier och metadata direkt från Riksbanken.",
+        "prompt": "Vilka serier finns tillgängliga för löner?"
       }
     ],
     "setup": []
