@@ -6,8 +6,8 @@
     "icon": {
       "type": "url",
       "url": {
-        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-light.png",
-        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png"
+        "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-dark.png",
+        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/kolada-light.png"
       }
     },
     "category": "Statistik",
@@ -50,7 +50,7 @@
       "type": "url",
       "url": {
         "light": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/swemo-dark.png",
-        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/swemo-dark.png"
+        "dark": "https://raw.githubusercontent.com/aerugo/staten.ai-app-registry/main/assets/swemo-light.png"
       }
     },
     "category": "Makroekonomi",
