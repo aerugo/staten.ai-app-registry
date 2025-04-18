@@ -1,78 +1,76 @@
 # Staten App Registry
 
-This repository serves as the official app registry for [Staten](https://github.com/statenistes/staten), an open-source [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) GUI client. It contains a curated list of MCP applications that can be integrated with Staten to extend its capabilities.
+Detta repository är det officiella app-registret för [Staten](https://github.com/statenistes/staten), en öppen källkod GUI-klient för [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction). Registret innehåller en utvald lista över MCP-applikationer som kan integreras med Staten för att utöka dess funktionalitet.
 
-## What is MCP?
+Staten.ai är en fork av [Fleur](https://www.fleurmcp.com/).
+Detta repository är inte kopplat till Fleur eller dess skapare.
 
-Model Context Protocol (MCP) is a standardized way for language models to interact with external tools and data sources. MCPs enable models to:
+## Vad är MCP?
 
-- Access real-time information
-- Interact with web services
-- Manipulate files and data
-- Connect to various APIs and platforms
+Model Context Protocol (MCP) är ett standardiserat sätt för språkmodeller att interagera med externa verktyg och datakällor. MCP gör det möjligt för modeller att:
 
-## Available Apps
+- Komma åt realtidsinformation
+- Interagera med webbtjänster
+- Hantera filer och data
+- Ansluta till olika API:er och plattformar
 
-The registry currently includes apps for:
+## Bidra med din MCP
 
-- Web browsing
-- Time services
-- Hacker News integration
-- Linear project management
-- Slack communication
-- Obsidian note-taking
-- Rember flashcards
+Vi välkomnar bidrag från utvecklare som vill lägga till sina MCP-applikationer i registret. För att skicka in din MCP-server, skapa en pull request enligt riktlinjerna nedan.
 
+Alla inskickade MCP:er kommer att granskas av Staten-teamet innan de läggs till i registret. Vi tillåter endast MCP:er som uppfyller följande kriterier:
+- **Integration med API från offentlig sektor eller civilsamhälle**: Din MCP-server ska erbjuda integration med API:er från offentlig sektor eller civilsamhälle.
+- **Gratis**: Din MCP-server ska vara gratis att använda.
+- **Öppen källkod**: Din MCP-server måste vara öppen källkod och tillgänglig på GitHub.
+- **Dokumentation**: Du måste inkludera tydlig dokumentation
+- **Inga skrivrättigheter**: Din MCP-server får inte begära skrivrättigheter till användarens system eller data.
 
-## Contributing Your MCP
-
-We welcome contributions from developers who want to add their MCP applications to the registry. To submit your MCP, please create a pull request following the guidelines below.
+Teamet för Staten förbehåller sig rätten att avvisa eller ta bort MCP:er som anses olämpliga eller som inte följer dessa riktlinjer.
 
 ### MCP Schema
 
-Each MCP in the registry must conform to the following JSON schema:
-
+Varje MCP i registret måste följa följande JSON-schema:
 ```json
 {
   "name": "Your App Name",
-  "description": "A concise description of what your app does and how it helps users",
+  "description": "En kortfattad beskrivning av vad din app gör och hur den hjälper användare",
   "icon": {
     "type": "url",
     "url": {
-      "light": "URL to light mode icon (SVG or PNG recommended)",
-      "dark": "URL to dark mode icon (SVG or PNG recommended)"
+      "light": "URL till en ljus ikon för mörkt läge (SVG eller PNG rekommenderas)",
+      "dark": "URL till en mörk ikon för ljust läge (SVG eller PNG rekommenderas)"
     }
   },
-  "category": "Category of your app (e.g., Productivity, Communication, Utilities)",
-  "price": "Free or pricing information",
-  "developer": "Your name or organization",
-  "sourceUrl": "URL to the source code repository",
+  "category": "Kategori för din app (t.ex. Kommundata, Politik, Hälsa)",
+  "price": "Alla appar ska vara gratis",
+  "developer": "Ditt namn eller organisation",
+  "sourceUrl": "URL till källkodens på GitHub",
   "config": {
-    "mcpKey": "unique identifier for your MCP",
-    "runtime": "runtime environment (e.g., npx, uvx)",
+    "mcpKey": "unik identifierare för din MCP",
+    "runtime": "körmiljö (t.ex. npx, uvx)",
     "args": [
-      "array of arguments needed to run your MCP",
+      "array med argument som krävs för att köra din MCP",
       "--api-key=${API_KEY}",
       "--base-url=${BASE_URL}"
     ]
   },
   "features": [
     {
-      "name": "Feature name",
-      "description": "Brief description of the feature",
-      "prompt": "Example prompt that users can use to trigger this feature"
+      "name": "Funktionsnamn",
+      "description": "Kort beskrivning av funktionen",
+      "prompt": "Exempel på prompt som användare kan använda för att aktivera denna funktion"
     }
   ],
   "setup": [
     {
-      "label": "API Key",
+      "label": "API-nyckel",
       "type": "input",
-      "placeholder": "Enter your API key",
+      "placeholder": "Ange din API-nyckel",
       "value": "",
       "key": "API_KEY"
     },
     {
-      "label": "Base URL",
+      "label": "Bas-URL",
       "type": "input",
       "placeholder": "https://api.example.com",
       "value": "https://api.example.com",
@@ -82,39 +80,39 @@ Each MCP in the registry must conform to the following JSON schema:
 }
 ```
 
-### Schema Field Descriptions
+### Beskrivningar av schemats fält
 
-| Field | Description | Required |
+| Fält | Beskrivning | Obligatoriskt |
 |-------|-------------|----------|
-| `name` | The display name of your app | Yes |
-| `description` | A brief description of what your app does | Yes |
-| `icon` | Icon configuration with light and dark mode variants | Yes |
-| `category` | The category your app belongs to | Yes |
-| `price` | Pricing information (Free, Paid, etc.) | Yes |
-| `developer` | Name of the developer or organization | Yes |
-| `sourceUrl` | URL to the source code repository | Yes |
-| `config` | Configuration details for running the MCP | Yes |
-| `config.mcpKey` | Unique identifier for your MCP | Yes |
-| `config.runtime` | Runtime environment (npx, uvx, etc.) | Yes |
-| `config.args` | Arguments needed to run your MCP | Yes |
-| `features` | Array of features your app provides | Yes |
-| `features[].name` | Name of the feature | Yes |
-| `features[].description` | Description of what the feature does | Yes |
-| `features[].prompt` | Example prompt for users | Yes |
-| `setup` | Array of setup instructions for configuration | No |
-| `setup[].label` | Label for the configuration item | If setup is included |
-| `setup[].type` | Type of input (input, select, etc.) | If setup is included |
-| `setup[].placeholder` | Placeholder text | If setup is included |
-| `setup[].value` | Default value or instructions | If setup is included |
-| `setup[].key` | Environment variable key | If setup is included |
+| `name` | Visningsnamnet på din app | Ja |
+| `description` | En kort beskrivning av vad din app gör | Ja |
+| `icon` | Ikonkonfiguration med varianter för ljust och mörkt läge | Ja |
+| `category` | Kategori som din app tillhör | Ja |
+| `price` | Prisinformation (Gratis, Betald, etc.) | Ja |
+| `developer` | Namnet på utvecklaren eller organisationen | Ja |
+| `sourceUrl` | URL till källkodens repository | Ja |
+| `config` | Konfigurationsdetaljer för att köra MCP | Ja |
+| `config.mcpKey` | Unik identifierare för din MCP | Ja |
+| `config.runtime` | Körmiljö (npx, uvx, etc.) | Ja |
+| `config.args` | Argument som behövs för att köra din MCP | Ja |
+| `features` | Array med funktioner som din app erbjuder | Ja |
+| `features[].name` | Namnet på funktionen | Ja |
+| `features[].description` | Beskrivning av vad funktionen gör | Ja |
+| `features[].prompt` | Exempelprompt för användare | Ja |
+| `setup` | Array med installationsinstruktioner för konfiguration | Nej |
+| `setup[].label` | Etikett för konfigurationsobjektet | Om setup inkluderas |
+| `setup[].type` | Typ av input (input, select, etc.) | Om setup inkluderas |
+| `setup[].placeholder` | Platshållartext | Om setup inkluderas |
+| `setup[].value` | Standardvärde eller instruktioner | Om setup inkluderas |
+| `setup[].key` | Miljövariabelnyckel | Om setup inkluderas |
 
-### Environment Variable Support
+### Stöd för miljövariabler
 
-Staten now supports using environment variables in your MCP configuration. This allows you to create more flexible and configurable MCPs without hardcoding sensitive information or user-specific settings.
+Staten stödjer användning av miljövariabler i din MCP-konfiguration. Detta gör att du kan skapa mer flexibla och anpassningsbara MCP:er utan att hårdkoda känslig information eller användarspecifika inställningar.
 
-#### Using Environment Variables in Args
+#### Användning av miljövariabler i Args
 
-You can include environment variables in your `args` array using the `${VARIABLE_NAME}` syntax. For example:
+Du kan inkludera miljövariabler i din `args`-array med hjälp av `${VARIABLE_NAME}`-syntaxen. Exempelvis:
 
 ```json
 "args": [
@@ -124,45 +122,45 @@ You can include environment variables in your `args` array using the `${VARIABLE
   "--port=${PORT}"
 ]
 ```
+När MCP:n installeras kommer Staten automatiskt att ersätta dessa variabler med motsvarande värden från användarens konfiguration.
 
-When the MCP is installed, Staten will automatically replace these variables with their corresponding values from the user's configuration.
+#### Funktioner för miljövariabler
 
-#### Environment Variable Features
+- **Enkla variabler**: `--api-key=${API_KEY}`
+- **Flera variabler i ett argument**: `--connection=${HOST}:${PORT}`
+- **Variabler med kringliggande text**: `--path=prefix_${PATH_VAR}_suffix`
+- **Stöd för olika värdetyper**: Nummer, booleska värden och strängar stöds alla
+- **Variabler av sökvägstyp**: `--config=${CONFIG_DIR}/settings.json`
 
-- **Simple variables**: `--api-key=${API_KEY}`
-- **Multiple variables in one argument**: `--connection=${HOST}:${PORT}`
-- **Variables with surrounding text**: `--path=prefix_${PATH_VAR}_suffix`
-- **Support for different value types**: Numbers, booleans, and strings are all supported
-- **Path-like variables**: `--config=${CONFIG_DIR}/settings.json`
+#### Inställning av miljövariabler
 
-#### Setting Up Environment Variables
+För att göra din MCP konfigurerbar, definiera de nödvändiga miljövariablerna i `setup`-arrayen. Varje post bör innehålla:
 
-To make your MCP configurable, define the required environment variables in the `setup` array. Each entry should include:
+1. En användarvänlig etikett
+2. Typen av inmatning
+3. En platshållare eller ett standardvärde
+4. Nyckeln för miljövariabeln som matchar den som används i dina `args`
 
-1. A user-friendly label
-2. The type of input
-3. A placeholder or default value
-4. The environment variable key that matches the one used in your `args`
+Detta ger användarna en smidig konfigurationsupplevelse samtidigt som känslig information hålls säker.
 
-This creates a seamless configuration experience for users while keeping sensitive information secure.
+### Riktlinjer för inskickning
 
-### Submission Guidelines
+1. Forka detta repository
+2. Lägg till din MCP i filen `apps.json`
+3. Lägg vid behov till din app-ikon i mappen `assets`
+4. Skicka en pull request med en tydlig beskrivning av din MCP
 
-1. Fork this repository
-2. Add your MCP to the `apps.json` file
-3. If needed, add your app icon to the `assets` directory
-4. Submit a pull request with a clear description of your MCP
+### Riktlinjer för ikoner
 
-### Icon Guidelines
+- Ikoner bör vara i SVG-format om möjligt (PNG är acceptabelt om SVG inte finns tillgängligt)
+- Inkludera varianter för både ljust och mörkt läge om din ikon ser olika ut i olika teman
+- Placera din ikon i mappen `assets` och referera till den i din MCP-konfiguration
 
-- Icons should be in SVG format when possible (PNG is acceptable if SVG is not available)
-- Include both light and dark mode variants if your icon has different appearances for different themes
-- Place your icon in the `assets` directory and reference it in your MCP configuration
+## Licens
 
-## License
-
-This repository is licensed under the Apache License 2.0 - see the LICENSE file for details.
+Detta repository är licensierat under Apache License 2.0 – se filen LICENSE för detaljer.
 
 ## Support
 
-For questions or issues related to the Staten App Registry, please open an issue in this repository.
+För frågor eller problem relaterade till Staten App Registry, öppna ett ärende i detta repository.
+
