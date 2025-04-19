@@ -20,10 +20,11 @@ Vi välkomnar bidrag från utvecklare som vill lägga till sina MCP-applikatione
 
 Alla inskickade MCP:er kommer att granskas av Staten-teamet innan de läggs till i registret. Vi tillåter endast MCP:er som uppfyller följande kriterier:
 - **Integration med API från offentlig sektor eller civilsamhälle**: Din MCP-server ska erbjuda integration med API:er från offentlig sektor eller civilsamhälle.
+- **Skickar inte data någonstans**: Det går att skicka data med MCP-servar, men de MCPs som erbjuds genom Staten.ai får inte skicka data någonstans, förutom det som krävs för att göre anrop till officiella APIer för att svara på användarens frågor. Syftet med den begränsningen är att undvika [indirekta prompt-injektionsattacker](https://techcommunity.microsoft.com/blog/microsoft-security-blog/understanding-and-mitigating-security-risks-in-mcp-implementations/4404667) och andra liknande säkerhetsproblem.
+- **Inga skrivrättigheter**: Din MCP-server får inte begära skrivrättigheter till användarens system eller data.
 - **Gratis**: Din MCP-server ska vara gratis att använda.
 - **Öppen källkod**: Din MCP-server måste vara öppen källkod och tillgänglig på GitHub.
 - **Dokumentation**: Du måste inkludera tydlig dokumentation
-- **Inga skrivrättigheter**: Din MCP-server får inte begära skrivrättigheter till användarens system eller data.
 
 Teamet för Staten förbehåller sig rätten att avvisa eller ta bort MCP:er som anses olämpliga eller som inte följer dessa riktlinjer.
 
